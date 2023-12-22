@@ -40,6 +40,7 @@ def main():
     try:
         # documentation: https://googleapis.github.io/google-api-python-client/docs/start.html
         # build() creates a service object
+        # use with build() as service: to not leave sockets open, or make sure to service.close()
         service = build("calendar", "v3", credentials=creds)
 
         # Call the Calendar API
@@ -72,7 +73,7 @@ def main():
 
     # test event creation
     finally:
-        # events are python dict
+        # events are python dict, might want to create a default event object that can be updated with various parameters
         # event documentation https://developers.google.com/calendar/api/v3/reference/events
         event = {
             'summary': 'Google I/O 2015',
@@ -104,6 +105,7 @@ def main():
         # service = build("calendar", "v3", credentials=creds)
         event = service.events().insert(calendarId='primary', body=event).execute()
         print('Event created: %s' % (event.get('htmlLink'))) # link doesn't work (Error 404), but the event is created
+        service.close()
 
 
 if __name__ == "__main__":
