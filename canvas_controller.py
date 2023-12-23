@@ -16,7 +16,8 @@ def build_user():
     User
         User associated with the user ID
     """
-
+    if (debug): print("In build_user")
+    
     load_dotenv()
 
     # Canvas API URL
@@ -51,6 +52,7 @@ def get_course_calendars(user, term):
     list<dict>
         List of dictionaries with name and url attributes
     """
+    if (debug): print("In get_course_calendars")
 
     # query courses in the specified term
     courses = user.get_courses(include = "term") # every course user has

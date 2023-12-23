@@ -11,6 +11,7 @@ canvasapi = "*"
 python-dotenv = "*"
 ics = "*"
 requests = "*"
+arrow = "*"
 
 [dev-packages]
 
