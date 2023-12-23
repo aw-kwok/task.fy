@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bea7969bda7450a5e21cdf546875a2c0201e4a8d0583f1efba4c02fe853727ac"
+            "sha256": "6a59feb4106323b1ab899453f183e6e6a131f945081f37923168b7d3bb598b11"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==1.3.0"
+        },
+        "attrs": {
+            "hashes": [
+                "sha256:1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04",
+                "sha256:6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==23.1.0"
         },
         "cachetools": {
             "hashes": [
@@ -201,6 +209,15 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.22.0"
         },
+        "ics": {
+            "hashes": [
+                "sha256:5fcf4d29ec6e7dfcb84120abd617bbba632eb77b097722b7df70e48dbcf26103",
+                "sha256:6743539bca10391635249b87d74fcd1094af20b82098bebf7c7521df91209f05",
+                "sha256:da352bdf8418619dc93611e6d251f3cefbb42664777f6e00b580a722098124b7"
+            ],
+            "index": "pypi",
+            "version": "==0.7.2"
+        },
         "idna": {
             "hashes": [
                 "sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca",
@@ -287,6 +304,7 @@
                 "sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f",
                 "sha256:942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==2.31.0"
         },
@@ -313,6 +331,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.16.0"
+        },
+        "tatsu": {
+            "hashes": [
+                "sha256:0a836692e67247cad9f251e083b045b13345cc715e69a7fbc16522beaa0f2163",
+                "sha256:571ecbcdf33b7828c05e5cd95a8e8ad06af111c2c83a6a245be4d8f7c43de7bb"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==5.8.3"
         },
         "types-python-dateutil": {
             "hashes": [

@@ -9,6 +9,8 @@ google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
 canvasapi = "*"
 python-dotenv = "*"
+ics = "*"
+requests = "*"
 
 [dev-packages]
 
