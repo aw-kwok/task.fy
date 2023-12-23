@@ -9,6 +9,7 @@
 ### Backend
 #### Documentation
 - [GCal integration + API](https://developers.google.com/calendar/api/guides/overview)
+- [GCal API](https://googleapis.github.io/google-api-python-client/docs/dyn/calendar_v3.html)
 - [Canvas API integration](https://canvas.instructure.com/doc/api/)
 - [Canvas API Python library](https://github.com/ucfopen/canvasapi/blob/524bfd707326dc6d154f886f0f2270d19fd1ffa1/README.md#installation)
 
