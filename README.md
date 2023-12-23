@@ -3,7 +3,7 @@
 ![MIT License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
 ## ✨ Features
-= Uses Canvas API to fetch course calendar data from the user
+- Uses Canvas API to fetch course calendar data from the user
 
 ## 📝 To-Do List
 ### Backend
