@@ -69,6 +69,9 @@ def get_course_calendars(user, term):
         # if term is term selected and course is active, add to calendar_links
         if (enrollment_state == "active" and course.term["name"] == term):
             if (debug): print(f'{course.name} {course.term["name"]} {course.calendar["ics"]}')
-            course_calendars.append({"name" : course.name, "url" : course.calendar["ics"]})
+            course_calendars.append({
+                "name" : course.name,
+                "url" : course.calendar["ics"],
+            })
 
     return course_calendars

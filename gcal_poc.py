@@ -102,8 +102,15 @@ def main():
                 ],
             },
         }
-        # service = build("calendar", "v3", credentials=creds)
-        event = service.events().insert(calendarId='primary', body=event).execute()
+
+        # eventId is NOT iCalUID, must fetch event ID using events().list(calendarId, iCalUID)
+        service.events().delete(calendarId="primary", eventId = "event-assignment-950206")
+
+        
+        #event = service.events().get(calendarId="primary", eventId= "event-assignment-950206")
+        #print(type(event))
+        #service.events().update(calendarId='primary', eventId= "event-assignment-950206", body=event).execute()
+        #event = service.events().insert(calendarId='primary', body=event).execute()
         print('Event created: %s' % (event.get('htmlLink'))) # link doesn't work (Error 404), but the event is created
         service.close()
 

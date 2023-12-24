@@ -30,26 +30,34 @@ def parse_calendars(course_calendars, color_map):
         c = Calendar(requests.get(calendar["url"]).text)
         for event in c.events:
             # https://developers.google.com/calendar/api/v3/reference/events
+
             gcal_event = {
-                "created": event.created.isoformat(),
-                "updated": None if event.last_modified is None else event.last_modified.isoformat(),
                 "summary": event.name,
-                "description": event.description,
-                "location": event.geo,
                 "colorId": color,
-                "start": {
-                    "dateTime": event.begin.isoformat(), 
-                },
-                "end": {
-                    "dateTime": None if event.end is None else event.end.isoformat(),
-                },
+                "start":{},
+                "end": {},
+                # "start": {
+                #     "dateTime": event.begin.isoformat(), 
+                # },
+                # "end": {
+                #     "dateTime": event.begin.isoformat() if event.end is None else event.end.isoformat(),
+                # },
                 "transparency": "transparent" if (event.transparent) else "opaque",
                 "iCalUID": event.uid,
                 "source": {
                     "url": event.url,
                 },
             }
+            # all day event handling
+            if event.all_day:
+                gcal_event["start"]["date"] = event.begin.date().isoformat()
+                gcal_event["end"]["date"] = event.begin.date().isoformat()
+            else:
+                gcal_event["start"]["dateTime"] = event.begin.isoformat()
+                gcal_event["end"]["dateTime"] = event.begin.isoformat() if event.end is None else event.end.isoformat()
+
+
             gcal_event_list.append(gcal_event)
-            break
             if (debug): print(gcal_event)
+
     return gcal_event_list
