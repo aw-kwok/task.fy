@@ -4,11 +4,12 @@ from gcal_controller import *
 import os
 from dotenv import load_dotenv
 
-debug = True
+debug = False
 
 load_dotenv()
 
 user = build_user()
+# user will input term
 term = "Fall2023"
 
 course_calendars = get_course_calendars(user, term)
@@ -16,7 +17,7 @@ if (debug): print(f"Course calendars: {course_calendars}")
 
 # assign each course to a different color, have user input preferences
 color_map = {}
-i = 0
+i = 1 # colors start at 1
 for calendar in course_calendars:
     name = calendar["name"]
     color = i
@@ -50,7 +51,7 @@ if not calendar:
 if (debug): print(f"Calendar: {calendar}")
 calendar_id = calendar["id"]
 
-# import events from event_list into calendar
+# sync events from event_list into calendar
 calendar = sync_events(event_list, calendar_id)
 
 #list_events(calendar_id)

@@ -7,7 +7,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-debug = True
+debug = False
 
 def authenticate():
     """
@@ -191,7 +191,7 @@ def import_events(event_list, calendar_id):
 
 def update_events(event_list, calendar_id):
     """
-    Updates events into a Google Calendar calendar, all events must be in the calendar
+    Updates events into a Google Calendar calendar
 
     Parameters
     ---------
@@ -219,14 +219,22 @@ def update_events(event_list, calendar_id):
         # iterate over event_list, updating each event
         for event in event_list:
             if (debug): print(f"Event: {event}")
-            try:
-                # query old_event with iCalUID
-                old_event = service.events().list(calendarId=calendar_id, iCalUID=event["iCalUID"]).execute()
-                if (debug): print(old_event["items"][0])
-                calendar = service.events().update(calendarId=calendar_id, eventId=old_event["items"][0]["id"], body=event).execute()
-                if (debug): print(f'{event["summary"]} updated')
-            except:
-                print(f'Failed to update event: {event["summary"]}')
+
+            # query old_event with iCalUID
+            old_event = service.events().list(calendarId=calendar_id, iCalUID=event["iCalUID"]).execute()
+
+            # assign old_events to the "items" array of matching entries
+            old_event = old_event["items"]
+
+            # if list not empty, there is a calendar entry, so update
+            if old_event:
+                try:
+                    # get old_event_id from the list of events (one event, each iCalUID is unique)
+                    old_event_id = old_event[0]["id"]
+                    calendar = service.events().update(calendarId=calendar_id, eventId=old_event_id, body=event).execute()
+                    if (debug): print(f'{event["summary"]} updated')
+                except:
+                    print(f'Failed to update event: {event["summary"]}')
 
     return calendar
 
