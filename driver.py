@@ -51,6 +51,6 @@ if (debug): print(f"Calendar: {calendar}")
 calendar_id = calendar["id"]
 
 # import events from event_list into calendar
-calendar = update_events(event_list, calendar_id)
+calendar = sync_events(event_list, calendar_id)
 
 #list_events(calendar_id)

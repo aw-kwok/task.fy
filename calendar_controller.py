@@ -30,18 +30,11 @@ def parse_calendars(course_calendars, color_map):
         c = Calendar(requests.get(calendar["url"]).text)
         for event in c.events:
             # https://developers.google.com/calendar/api/v3/reference/events
-
             gcal_event = {
                 "summary": event.name,
                 "colorId": color,
                 "start":{},
                 "end": {},
-                # "start": {
-                #     "dateTime": event.begin.isoformat(), 
-                # },
-                # "end": {
-                #     "dateTime": event.begin.isoformat() if event.end is None else event.end.isoformat(),
-                # },
                 "transparency": "transparent" if (event.transparent) else "opaque",
                 "iCalUID": event.uid,
                 "source": {

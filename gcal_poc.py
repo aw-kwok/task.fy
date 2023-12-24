@@ -106,7 +106,10 @@ def main():
         # eventId is NOT iCalUID, must fetch event ID using events().list(calendarId, iCalUID)
         service.events().delete(calendarId="primary", eventId = "event-assignment-950206")
 
-        
+        # if event does not exist, returns an events object with "items" = []
+        #event = service.events().list(calendarId="primary", iCalUID="asdlfhlaskdjfhlaskjd").execute()
+
+        print(event)
         #event = service.events().get(calendarId="primary", eventId= "event-assignment-950206")
         #print(type(event))
         #service.events().update(calendarId='primary', eventId= "event-assignment-950206", body=event).execute()

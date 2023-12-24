@@ -191,7 +191,7 @@ def import_events(event_list, calendar_id):
 
 def update_events(event_list, calendar_id):
     """
-    Updates events into a Google Calendar calendar
+    Updates events into a Google Calendar calendar, all events must be in the calendar
 
     Parameters
     ---------
@@ -216,19 +216,76 @@ def update_events(event_list, calendar_id):
         return None
 
     with build("calendar", "v3", credentials=creds) as service:
-        # iterate over event_list, inserting each event into Google Calendar
+        # iterate over event_list, updating each event
         for event in event_list:
             if (debug): print(f"Event: {event}")
             try:
+                # query old_event with iCalUID
                 old_event = service.events().list(calendarId=calendar_id, iCalUID=event["iCalUID"]).execute()
-                print(old_event["items"][0])
+                if (debug): print(old_event["items"][0])
                 calendar = service.events().update(calendarId=calendar_id, eventId=old_event["items"][0]["id"], body=event).execute()
                 if (debug): print(f'{event["summary"]} updated')
             except:
                 print(f'Failed to update event: {event["summary"]}')
-                break
 
     return calendar
+
+def sync_events(event_list, calendar_id):
+    """
+    Imports events into a Google Calendar calendar if they don't exist, and updates them if they do
+
+    Parameters
+    ---------
+    list<dict> : event_list
+       List of events to be imported into Google Calendar
+    str : calendar_id
+        ID of Google Calendar to import events into
+       
+    Returns
+    -------
+    Calendar
+        Calendar object
+    """
+    if (debug): print("In sync_events")
+
+    creds = authenticate()
+
+    # if calendar does not exist, return and throw error message
+    calendar = get_calendar(calendar_id)
+    if calendar is None:
+        print("Calendar not found")
+        return None
+    
+    with build("calendar", "v3", credentials=creds) as service:
+        # iterate over event_list, inserting each event into Google Calendar
+        for event in event_list:
+            if (debug): print(f"Event: {event}")
+
+            # query old_event with iCalUID
+            old_event = service.events().list(calendarId=calendar_id, iCalUID=event["iCalUID"]).execute()
+
+            # assign old_events to the "items" array of matching entries
+            old_event = old_event["items"]
+            
+            # if list is empty, import as normal
+            if not old_event:
+                try:
+                    calendar = service.events().import_(calendarId=calendar_id, body=event).execute()
+                    if (debug): print(f'{event["summary"]} imported')
+                except:
+                    print(f'Failed to insert event: {event["summary"]}')
+            
+            # if list not empty, update
+            else:
+                try:
+                    # get old_event_id from the list of events (one event, each iCalUID is unique)
+                    old_event_id = old_event[0]["id"]
+                    calendar = service.events().update(calendarId=calendar_id, eventId=old_event_id, body=event).execute()
+                    if (debug): print(f'{event["summary"]} updated')
+                except:
+                    print(f'Failed to update event: {event["summary"]}')
+        return calendar
+
 
 def list_events(calendar_id):
     """
