@@ -35,9 +35,10 @@ def parse_calendars(course_calendars, color_map):
                 "colorId": color,
                 "start":{},
                 "end": {},
-                "transparency": "transparent" if (event.transparent) else "opaque",
+                "transparency": "transparent",
                 "iCalUID": event.uid,
                 "source": {
+                    "title": calendar["name"],
                     "url": event.url,
                 },
             }
