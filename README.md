@@ -37,6 +37,7 @@
 - Widener:
 - URichmond:
 - Middlebury: f'{semester_name} {full_year}' (Fall 2023) - middlebury.instructure.com
+- UW-Madison f'{semester_name} {ay_start}-{ay-end}' (Fall 2023-2024) - canvas.wisc.edu
 
 
 
