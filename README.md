@@ -39,7 +39,8 @@
 - Middlebury: f'{semester_name} {full_year}' (Fall 2023) - middlebury.instructure.com
 - UW-Madison f'{semester_name} {ay_start}-{ay-end}' (Fall 2023-2024) - canvas.wisc.edu
 - UMN - f'{full_year} {semester_name} ({start_date}-{end_date}) (2023 Fall (08/08/2023-01/06/2024)) - canvas.umn.edu *I have no idea what those dates are, will have to figure that out
-- UTampa f'{full_year} {semester_name} Semester' (2923 Fall Semester) - utampa.instructure.com
+- UTampa f'{full_year} {semester_name} Semester' (2023 Fall Semester) - utampa.instructure.com
+- Johns Hopkins - f'{semester_name} {full_year}' (Fall 2023) - jhu.instructure.com
 
 
 
