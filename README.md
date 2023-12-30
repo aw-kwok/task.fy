@@ -25,7 +25,7 @@
 - Princeton - f'{semester_name} {full_year}' (Fall 2023) - princeton.instructure.com
 - Rutgers: f'{semester_name} {full_year}' (Fall 2023) - rutgers.instructure.com
 - Notre Dame: 
-- UPenn: 
+- UPenn: f'{full_year}{quarter_code} ({semester)name} {full_year})' (202330 (Fall 2023))- canvas.upenn.edu (UPenn uses 202230 for fall 2023, 202310 for spring 2024 => quarter code: 10 = fall, 30 = spring, 20 = summer???)
 - Yale: f'{semester_name} {full_year}' (Fall 2023)
 - UMD: f'{semester_name} {full_year}' (Fall 2023) - umd.instructure.com
 - UChicago: f'{full_year}.{quarter_code}' (2023.01) - quarter system (01 - winter, 02 - spring, 03 - summer, 04 - fall) - canvas.uchicago.edu
