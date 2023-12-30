@@ -36,6 +36,7 @@
 - Kean: f'{semester_name} {full_year}' (Fall 2023) - kean.instructure.com
 - Widener:
 - URichmond:
+- Middlebury: f'{semester_name} {full_year}' (Fall 2023) - middlebury.instructure.com
 
 
 
