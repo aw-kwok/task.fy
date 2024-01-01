@@ -12,6 +12,9 @@ python-dotenv = "*"
 ics = "*"
 requests = "*"
 arrow = "*"
+django = "*"
+djangorestframework = "*"
+cryptography = "*"
 
 [dev-packages]
 
