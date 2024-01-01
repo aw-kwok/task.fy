@@ -15,6 +15,7 @@ arrow = "*"
 django = "*"
 djangorestframework = "*"
 cryptography = "*"
+django-allauth = "*"
 
 [dev-packages]
 
