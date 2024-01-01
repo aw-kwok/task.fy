@@ -5,6 +5,7 @@ from django.db import models
 class University(models.Model):
     university_id = models.AutoField(primary_key = True)
     university_name = models.CharField(max_length = 255, default = "")
+    api_url = models.CharField(max_length=255, default = "")
     term_format = models.CharField(max_length = 255, default = "")
 
 
