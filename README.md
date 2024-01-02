@@ -16,10 +16,9 @@
  #### To-Do
 - ~~Implement Canvas API to read assignments~~
 - ~~Write assignments to GCal, with different events for different colors~~
-- Create database to store user data, automatically assigning a user an ID upon login
-- Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB
 - ~~Migrate project to Django~~
 - Create API endpoints
+- Migrate database to webhosting software (AWS, Oracle Cloud), research free tiers
 
 #### Map university semesters by each college
 - Georgetown: f'{semester_name}{full_year}' (Fall2023) - georgetown.instructure.com
@@ -50,6 +49,8 @@
 ### Frontend
 #### To-Do
 - Create Figma mockup
+- Create landing page
+- Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB
 
 ### Ideas:
 - Grade calculator w/ What-If Analysis (might be challenging with permissions in Canvas API, but might still be possible)
