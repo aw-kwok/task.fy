@@ -18,7 +18,8 @@
 - ~~Write assignments to GCal, with different events for different colors~~
 - Create database to store user data, automatically assigning a user an ID upon login
 - Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB
-- Migrate project to Django
+- ~~Migrate project to Django~~
+- Create API endpoints
 
 #### Map university semesters by each college
 - Georgetown: f'{semester_name}{full_year}' (Fall2023) - georgetown.instructure.com
