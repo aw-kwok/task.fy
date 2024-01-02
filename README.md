@@ -20,32 +20,6 @@
 - Create API endpoints
 - Migrate database to webhosting software (AWS, Oracle Cloud), research free tiers
 
-#### Map university semesters by each college
-- Georgetown: f'{semester_name}{full_year}' (Fall2023) - georgetown.instructure.com
-- Columbia: f'{semester_name} {full_year}' (Fall 2023) - courseworks2.columbia.edu
-- Cornell: f'{semester_name} {full_year}' (Fall 2023) - canvas.cornell.edu
-- Princeton - f'{semester_name} {full_year}' (Fall 2023) - princeton.instructure.com
-- Rutgers: f'{semester_name} {full_year}' (Fall 2023) - rutgers.instructure.com
-- Notre Dame: 
-- UPenn: f'{full_year}{quarter_code} ({semester)name} {full_year})' (202330 (Fall 2023))- canvas.upenn.edu (UPenn uses 202230 for fall 2023, 202310 for spring 2024 => quarter code: 10 = fall, 30 = spring, 20 = summer???)
-- Yale: f'{semester_name} {full_year}' (Fall 2023)
-- UMD: f'{semester_name} {full_year}' (Fall 2023) - umd.instructure.com
-- UChicago: f'{full_year}.{quarter_code}' (2023.01) - quarter system (01 - winter, 02 - spring, 03 - summer, 04 - fall) - canvas.uchicago.edu
-- Middlesex County College - f'{semester_name} {full_year}' (Fall 2023) - middlesexcc.instructure.com
-- Indiana University f'{semester_name} {full_year}' (Fall 2023) - iu.instructure.com
-- MIT: f'{semester_name} Term (AY {ay_start}-{ay_end}' (Fall Term (AY 2023-2024)) - canvas.mit.edu *Some MIT courses (CS) use their own website, not Canvas
-- BC: 
-- Kean: f'{semester_name} {full_year}' (Fall 2023) - kean.instructure.com
-- Widener:
-- URichmond: f'{semester_name} {full_year}' (Fall 2023) - universityofrichmond.instructure.com
-- Middlebury: f'{semester_name} {full_year}' (Fall 2023) - middlebury.instructure.com
-- UW-Madison f'{semester_name} {ay_start}-{ay-end}' (Fall 2023-2024) - canvas.wisc.edu
-- UMN - f'{full_year} {semester_name} ({start_date}-{end_date}) (2023 Fall (08/08/2023-01/06/2024)) - canvas.umn.edu *I have no idea what those dates are, will have to figure that out
-- UTampa f'{full_year} {semester_name} Semester' (2023 Fall Semester) - utampa.instructure.com
-- Johns Hopkins - f'{semester_name} {full_year}' (Fall 2023) - jhu.instructure.com
-- Case Western - f'{semester_name} {full_year}' (Fall 2023) - canvas.case.edu
-- Georgia Tech - f'{semester_name} {full_year}' (Fall 2023) - gatech.instructure.com
-
 ### Frontend
 #### To-Do
 - Create Figma mockup
