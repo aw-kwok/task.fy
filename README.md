@@ -28,7 +28,7 @@
 #### To-Do
 - ~~Create Figma landing page~~
 - Create Figma dashboard
-- Create landing page from Figma mockup
+- ~~Create landing page from Figma mockup~~
 - Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB
 
 ### Ideas:
