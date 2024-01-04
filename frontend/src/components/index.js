@@ -7,6 +7,7 @@ import Google from "./Google"
 import Navbar from "./Navbar"
 import Hero from "./Hero"
 import LearnMore from "./LearnMore"
+import Landing from "./Landing"
 
 export {
     AutoSchedule,
@@ -18,4 +19,5 @@ export {
     Navbar,
     Hero,
     LearnMore,
+    Landing,
 }

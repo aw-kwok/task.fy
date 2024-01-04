@@ -18,7 +18,7 @@ const Hero = () => (
                 Integrates seamlessly with Canvas and Google Calendar to make time management simple. We’re here to help you take back control over your schedule and make time for the things that matter to you.
                 </p>
 
-                <div className="ss:flex hidden md:mr-4 mr-0 pt-10">
+                <div className="ss:flex md:mr-4 mr-0 pt-10">
                     <GetStarted />
                 </div>
 

@@ -72,65 +72,37 @@ export const feedback = [
 
 export const footerLinks = [
   {
-    title: "Useful Links",
+    title: "Company",
     links: [
       {
-        name: "Content",
+        name: "About",
         link: "https://www.hoobank.com/content/",
       },
       {
-        name: "How it Works",
+        name: "FAQ",
         link: "https://www.hoobank.com/how-it-works/",
       },
-      {
-        name: "Create",
-        link: "https://www.hoobank.com/create/",
-      },
-      {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
-      },
-      {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
-      },
     ],
   },
   {
-    title: "Community",
+    title: "Legal",
     links: [
       {
-        name: "Help Center",
+        name: "Terms of Service",
         link: "https://www.hoobank.com/help-center/",
       },
-      {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
-      },
-      {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
-      },
     ],
   },
   {
-    title: "Partner",
+    title: "Social",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        name: "Instagram",
+        link: "https://www.instagram.com/andreww.kwok/",
       },
       {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "Linkedin",
+        link: "https://www.linkedin.com/in/andrew-kwok-761a45237/",
       },
     ],
   },
