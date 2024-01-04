@@ -1,4 +1,4 @@
-import Automatic from "./Automatic"
+import AutoSchedule from "./AutoSchedule"
 import Button from "./Button"
 import Canvas from "./Canvas"
 import Footer from "./Footer"
@@ -6,9 +6,10 @@ import GetStarted from "./GetStarted"
 import Google from "./Google"
 import Navbar from "./Navbar"
 import Hero from "./Hero"
+import LearnMore from "./LearnMore"
 
 export {
-    Automatic,
+    AutoSchedule,
     Button,
     Canvas,
     Footer,
@@ -16,4 +17,5 @@ export {
     Google,
     Navbar,
     Hero,
+    LearnMore,
 }

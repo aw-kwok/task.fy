@@ -3,12 +3,14 @@ const styles = {
 
   headline: "font-outfit font-bold text-[48px] ss:leading-[122%]",
 
+  infoHeading: "font-outfit font-bold text-[40px] ss:leading-[122%]",
+
   heading2: "font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full",
   paragraph: "font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]",
 
-  body: "",
+  body: "font-roboto text-[20px] ss:leading-[150%]",
 
-  button: "bg-button text-white text-[20px] tracking-[.1em] font-outfit font-semibold py-5 px-8 rounded-full cursor-pointer",
+  button: "bg-button text-white text-[20px] tracking-[.1em] font-outfit font-semibold rounded-full cursor-pointer hover:bg-[#607fdd] flex justify-center",
 
   flexCenter: "flex justify-center items-center",
   flexStart: "flex justify-center items-start",

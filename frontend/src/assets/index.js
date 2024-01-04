@@ -25,6 +25,9 @@ import people02 from "./people02.png";
 import people03 from "./people03.png";
 import temp_logo from "./temp_logo.svg";
 import placeholder from "./placeholder.png"
+import hero_blobs from "./hero_blobs.svg"
+import arrow from "./arrow.svg"
+import hero_bottom from "./hero_bottom.svg"
 
 export {
   airbnb,
@@ -54,4 +57,7 @@ export {
   people03,
   temp_logo,
   placeholder,
+  hero_blobs,
+  arrow,
+  hero_bottom
 };
