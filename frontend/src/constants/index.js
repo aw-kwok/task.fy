@@ -82,6 +82,10 @@ export const footerLinks = [
         name: "FAQ",
         link: "https://www.hoobank.com/how-it-works/",
       },
+      {
+        name: "Contact Us",
+        link: "/contact",
+      },
     ],
   },
   {

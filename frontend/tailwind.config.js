@@ -17,6 +17,15 @@ module.exports = {
         outfit: ["Outfit"],
         roboto: ["Roboto"],
       },
+      animation: {
+        fadeUp: 'fadeUp 0.5s',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: 0, transform: `translateY(30px) scale(0.9)`},
+          '100%': { opacity: 100, transform: `translateY(0px) scale(1)`},
+        }
+      }
     },
     screens: {
       xs: "480px",

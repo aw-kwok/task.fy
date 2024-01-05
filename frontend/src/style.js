@@ -11,6 +11,7 @@ const styles = {
   body: "font-roboto text-[20px] ss:leading-[150%]",
 
   button: "bg-button text-white text-[20px] tracking-[.1em] font-outfit font-semibold rounded-full cursor-pointer hover:bg-[#607fdd] flex justify-center",
+  ghostButton: "border-2 border-solid border-[#172248] text-[#172248] text-[20px] tracking-[.1em] font-outfit font-semibold rounded-full cursor-pointer hover:bg-[#d4d9ff] flex justify-center",
 
   flexCenter: "flex justify-center items-center",
   flexStart: "flex justify-center items-start",

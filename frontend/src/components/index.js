@@ -7,7 +7,8 @@ import Google from "./Google"
 import Navbar from "./Navbar"
 import Hero from "./Hero"
 import LearnMore from "./LearnMore"
-import Landing from "./Landing"
+import GoHome from "./GoHome"
+import ContactButton from "./ContactButton"
 
 export {
     AutoSchedule,
@@ -19,5 +20,6 @@ export {
     Navbar,
     Hero,
     LearnMore,
-    Landing,
+    GoHome,
+    ContactButton
 }

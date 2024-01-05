@@ -28,6 +28,8 @@ import placeholder from "./placeholder.png"
 import hero_blobs from "./hero_blobs.svg"
 import arrow from "./arrow.svg"
 import hero_bottom from "./hero_bottom.svg"
+import dashboard_tilt_temp from "./dashboard_tilt_temp.png"
+import pageNotFound from "./page-not-found.png"
 
 export {
   airbnb,
@@ -59,5 +61,7 @@ export {
   placeholder,
   hero_blobs,
   arrow,
-  hero_bottom
+  hero_bottom,
+  dashboard_tilt_temp,
+  pageNotFound
 };
