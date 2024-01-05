@@ -30,6 +30,7 @@ import arrow from "./arrow.svg"
 import hero_bottom from "./hero_bottom.svg"
 import dashboard_tilt_temp from "./dashboard_tilt_temp.png"
 import pageNotFound from "./page-not-found.png"
+import gcalTemp from "./gcal_temp.png"
 
 export {
   airbnb,
@@ -63,5 +64,6 @@ export {
   arrow,
   hero_bottom,
   dashboard_tilt_temp,
-  pageNotFound
+  pageNotFound,
+  gcalTemp
 };

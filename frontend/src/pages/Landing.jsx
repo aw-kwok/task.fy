@@ -1,10 +1,14 @@
 import React from 'react'
+import { useEffect } from 'react'
 
 import styles from "../style"
 
 import { Navbar, Hero, AutoSchedule, Canvas, Footer, Google, LearnMore } from "../components"
 
 import { hero_blobs } from "../assets"
+
+import AOS from "aos"
+
 
 const Landing = () => (
   <div className='bg-secondary w-full overflow-hidden bg-local bg-no-repeat md:bg-[65em_-20em] md:bg-auto ss:bg-[25em_25em] ss:bg-[length:65%] bg-[20em_40em] bg-[length:60%]' style={{backgroundImage: `url(${hero_blobs})`}}>
@@ -33,5 +37,6 @@ const Landing = () => (
 
   </div>
 )
+
 
 export default Landing

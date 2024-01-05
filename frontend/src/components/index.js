@@ -9,6 +9,7 @@ import Hero from "./Hero"
 import LearnMore from "./LearnMore"
 import GoHome from "./GoHome"
 import ContactButton from "./ContactButton"
+import ProtectedRoute from "./ProtectedRoute"
 
 export {
     AutoSchedule,
@@ -21,5 +22,6 @@ export {
     Hero,
     LearnMore,
     GoHome,
-    ContactButton
+    ContactButton,
+    ProtectedRoute
 }
