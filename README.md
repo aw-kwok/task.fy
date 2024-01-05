@@ -29,7 +29,9 @@
 - ~~Create Figma landing page~~
 - Create Figma dashboard
 - ~~Create landing page from Figma mockup~~
-- Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB
+- Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB\
+- Create logo
+- Replace temporary images on landing page
 
 ### Ideas:
 - Grade calculator w/ What-If Analysis (might be challenging with permissions in Canvas API, but might still be possible)
