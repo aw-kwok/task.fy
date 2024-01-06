@@ -12,29 +12,26 @@ import axios from 'axios'
 const GetStarted = () => {
   
   const handleLogin = useGoogleLogin({
-      onSuccess: async tokenResponse => {
-        try {
-          const res = await axios.get("https://googleapis.com/oauth2/v3/userinfo", {
-            headers: {
-              Authorization: `Bearer ${tokenResponse.access_token}`,
-              "Access-Control-Allow_Origin": "*",
-            }
-          })
-          console.log(res)
-          Cookies.set('auth_token', res.credentials, {expires: 7})
-          // window.location.href = "/dashboard"
-        }
-        catch (err) {
-          console.log(err)
-        }
+      onSuccess: tokenResponse => {
+        console.log(tokenResponse)
+        Cookies.set('auth_token', tokenResponse.access_token, {expires: 7})
+        // axios.post("http://localhost:8000/api/login", {
+        //   "accessToken" : tokenResponse.access_token
+        // }).then((res) => {
+        //   console.log(res)
+        // }).err((err) => {
+        //   console.log(err)
+        // })
+        // window.location.href = "/dashboard"
       },
     })
 
   return (
-  <div className={`${styles.button} py-5 px-8 `} onClick={() => { Cookies.get("auth_token") ? window.location.href = "/dashboard" : handleLogin() }}>
-    GET STARTED
-  </div>
- 
+    <a href='/sign-in'>
+      <div className={`${styles.button} py-5 px-8 `}>
+        GET STARTED
+      </div>
+    </a>
 )}
 
 export default GetStarted

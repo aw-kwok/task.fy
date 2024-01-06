@@ -9,7 +9,7 @@ const Footer = () => (
       <CTABox />
       <div className="flex-[1.5] md:w-full w-screen flex flex-row flex-wrap justify-between md:mt-0 mt-10 px-20">
         {footerLinks.map((footerLink) => (
-          <div key={footerLink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px]">
+          <div key={footerLink.title} className="flex flex-col ss:my-0 my-4 min-w-[150px]">
             <h4 className="font-outfit text-[20px] text-white">
               {footerLink.title}
             </h4>

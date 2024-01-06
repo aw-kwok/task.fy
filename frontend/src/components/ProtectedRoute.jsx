@@ -4,10 +4,11 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 const ProtectedRoute = () => {
 
-  const isAuthenticated = Cookies.get('auth_token')
+  // make sure to see if id is in cookies
+  const isAuthenticated = Cookies.get('id_token')
 
   if (!isAuthenticated) return (
-    <Navigate to="/" replace />
+    <Navigate to="/sign-in" replace />
   )
 
   return (

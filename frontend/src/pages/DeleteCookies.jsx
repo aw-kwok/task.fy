@@ -7,8 +7,8 @@ import Cookies from 'js-cookie'
 const DeleteCookies = () => {
 
   const deleteCookies = () => {
-    Cookies.remove("auth_token")
-    console.log("Cookies deleted")
+    Cookies.remove("id_token")
+    console.log("id_token deleted")
   }
 
   return (

@@ -10,6 +10,7 @@ import LearnMore from "./LearnMore"
 import GoHome from "./GoHome"
 import ContactButton from "./ContactButton"
 import ProtectedRoute from "./ProtectedRoute"
+import SignInBox from "./SignInBox"
 
 export {
     AutoSchedule,
@@ -23,5 +24,6 @@ export {
     LearnMore,
     GoHome,
     ContactButton,
-    ProtectedRoute
+    ProtectedRoute,
+    SignInBox
 }
