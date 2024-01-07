@@ -8,3 +8,6 @@ __pycache__/
 # Credentials
 credentials.json
 token.json
+
+#pip
+Pipfile.lock
