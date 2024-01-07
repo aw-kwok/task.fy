@@ -39,8 +39,17 @@ class CreateUserView(APIView):
 class GoogleAuthProviderView(APIView):
     permission_classes = [AllowAny]
 
+    # delete cookie
+
     def post(self, request):
         print(request)
+
+        # if cookie
+        # take cookie from request header
+        # verify user in cookie
+
+
+        # if no cookie
         # request.body is a bytes object, so decode and load json
         data = json.loads(request.body.decode("utf-8"))
         print(data)
@@ -53,6 +62,8 @@ class GoogleAuthProviderView(APIView):
             name = idinfo["name"]
             print(userid)
             print(name)
+
+            # signed, httpOnly cookie
 
             # response = HttpResponse()
             # response.set_signed_cookie("id_token", request.data, httponly=True)

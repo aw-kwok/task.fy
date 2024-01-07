@@ -6,7 +6,7 @@ from .models import *
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ("user_id", "last_name", "first_name", "canvas_id", "canvas_secret", "university")
+    list_display = ("user_id", "name", "canvas_id", "canvas_secret", "university")
 
 @admin.register(University)
 class UniversityAdmin(admin.ModelAdmin):
