@@ -9,6 +9,9 @@ from django.http import HttpResponse, HttpResponseBadRequest
 
 from google.oauth2 import id_token
 from google.auth.transport.requests import Request
+from google.auth import jwt
+
+import time
 
 import json
 
@@ -38,16 +41,18 @@ class CreateUserView(APIView):
 
 class DeleteCookieView(APIView):
     permission_classes = [AllowAny]
+
     def delete(self, request):
         response = HttpResponse()
-        response.delete_cookie('id_token',path=request.path) 
+        response.delete_cookie('id_token', path=request.path, samesite="None") 
         return response
 
 class GoogleAuthProviderView(APIView):
     permission_classes = [AllowAny]
-    def post(self, request):
-        print(type(request))
-        try: # if cookie
+
+    def get(self, request):
+        # checks if user is logged in by checking id_token cookie
+        try:
             # take cookie from request header
             cookie = request.get_signed_cookie('id_token')
             print('Has Cookie')
@@ -55,28 +60,53 @@ class GoogleAuthProviderView(APIView):
             # verify user in cookies
             idinfo = id_token.verify_oauth2_token(cookie, Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
             print('Token verified')
+
+            userid = idinfo["sub"]
+            name = idinfo["name"]
+            print(userid)
+            print(name)
+
+            response = HttpResponse()
+            response.delete_cookie("id_token", path=request.path, samesite="None")
+
             return HttpResponse()
-        except (KeyError, ValueError): # if no cookie
-            if (request.body == None):
-                return HttpResponseBadRequest('Request Body Empty')
-            
-            # request.body is a bytes object, so decode and load json
-            data = json.loads(request.body.decode("utf-8"))
-            print(data)
+        except KeyError:
+            return HttpResponseBadRequest("Cookie not found")
+        except ValueError:
+            return HttpResponseBadRequest("id_token invalid")
 
-            # verify oauth2 token
-            try:
-                idinfo = id_token.verify_oauth2_token(data["credential"], Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
+    def post(self, request):
+        if (request.body == None):
+            return HttpResponseBadRequest('Request Body Empty')
+        
+        # request.body is a bytes object, so decode and load json
+        data = json.loads(request.body.decode("utf-8"))
+        print(data)
 
-                userid = idinfo["sub"]
-                name = idinfo["name"]
-                print(userid)
-                print(name)
+        # verify oauth2 token
+        try:
+            idinfo = id_token.verify_oauth2_token(data["credential"], Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
 
-                # signed, httpOnly cookie
-                response = HttpResponse()
-                response.set_signed_cookie("id_token", data['credential'], httponly=True, samesite = "None", secure = True)
-                return response
-            except ValueError:
-                return HttpResponseBadRequest("Failed to verify OAuth2 token")
+            userid = idinfo["sub"]
+            name = idinfo["name"]
+            print(userid)
+            print(name)
+
+            # signed, httpOnly cookie
+            response = HttpResponse()
+            response.set_signed_cookie("id_token", data['credential'], httponly=True, samesite = "None", secure = True)
+            return response
+        except ValueError as e:
+            print(e)
+            # if token used too early, wait and send the request again
+            if "Token used too early" in str(e):
+                decoded_token = jwt.decode(data["credential"], verify=False)
+                iat = decoded_token["iat"]
+                curr_time = int(time.time())
+                # wait by the difference between the system time and iat
+                if (curr_time < iat):
+                    print("Too early")
+                    time.sleep(iat - curr_time)
+                return self.post(request)
+            else: return HttpResponseBadRequest("Failed to verify OAuth2 token")
         
