@@ -159,5 +159,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'https://localhost:5173'
 ]
+
+CORS_ALLOW_CREDENTIALS = True

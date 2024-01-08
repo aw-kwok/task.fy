@@ -53,13 +53,13 @@ class GoogleAuthProviderView(APIView):
             print('Has Cookie')
 
             # verify user in cookies
-            credentials = cookie.value
-            idinfo = id_token.verify_oauth2_token(credentials, Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
+            idinfo = id_token.verify_oauth2_token(cookie, Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
             print('Token verified')
             return HttpResponse()
         except (KeyError, ValueError): # if no cookie
             if (request.body == None):
                 return HttpResponseBadRequest('Request Body Empty')
+            
             # request.body is a bytes object, so decode and load json
             data = json.loads(request.body.decode("utf-8"))
             print(data)
@@ -75,7 +75,7 @@ class GoogleAuthProviderView(APIView):
 
                 # signed, httpOnly cookie
                 response = HttpResponse()
-                response.set_signed_cookie("id_token", data['credential'], httponly=True)
+                response.set_signed_cookie("id_token", data['credential'], httponly=True, samesite = "None", secure = True)
                 return response
             except ValueError:
                 return HttpResponseBadRequest("Failed to verify OAuth2 token")

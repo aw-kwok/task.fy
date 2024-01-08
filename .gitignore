@@ -11,3 +11,7 @@ token.json
 
 #pip
 Pipfile.lock
+
+#certification keys
+localhost.pem
+localhost-key.pem
