@@ -16,16 +16,13 @@ const SignInBox = () => {
                 console.log(CredentialResponse)
                 console.log(jwtDecode(CredentialResponse.credential))
 
-                // store jwt in cookie
-                // Cookies.set('id_token', CredentialResponse, {expires: 7})
-
                 // send credential to backend for authentication
                 const res = await axios.post("http://127.0.0.1:8000/api/login", CredentialResponse, {
                   withCredentials: true
                 })
                 console.log(res.headers["set-cookie"])
                 console.log(res)
-                // window.location.href = "/dashboard"
+                window.location.href = "/dashboard"
               }}
               onError = {() => {console.log("An error has occured")}}
               text = "signin_with"

@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../style'
 import { Navbar, Footer, SignInBox } from '../components'
 
+import axios from 'axios'
+
 const SignIn = () => {
+
+  useEffect(() => {
+    // on load, send get request to check header for id_token cookie, if logged-in then redirect to dashboard automatically
+    const checkCookie = async () => {
+      try {
+        const res = await axios.get("http://127.0.0.1:8000/api/login", {
+          withCredentials: true
+        })
+        console.log(res)
+        window.location.href = "/dashboard"
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }
+    checkCookie()
+  })
+
   return (
     <div className='bg-secondary w-full overflow-hidden'>
       <div className={`flex justify-center`}>
