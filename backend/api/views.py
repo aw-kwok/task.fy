@@ -14,6 +14,9 @@ import json
 
 import requests
 
+#debug variable
+debug = True
+
 # Create your views here.
 
 class UserView(generics.ListAPIView):
@@ -45,38 +48,50 @@ class DeleteCookieView(APIView):
 
 class GoogleAuthProviderView(APIView):
     permission_classes = [AllowAny]
-    def post(self, request):
-        print(type(request))
-        try: # if cookie
-            # take cookie from request header
+
+    #Cookie Verification
+    def get (self, request):
+        try:
+            if(debug): print('Getting Cookie')
             cookie = request.get_signed_cookie('id_token')
-            print('Has Cookie')
+            if(debug): print('Has Cookie')
 
             # verify user in cookies
             credentials = cookie.value
             idinfo = id_token.verify_oauth2_token(credentials, Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
-            print('Token verified')
+            
+            if(debug): 
+                print('Token verified')
+                print(idinfo['sub'])
+                print(idinfo['name'])
+        
             return HttpResponse()
-        except (KeyError, ValueError): # if no cookie
-            if (request.body == None):
-                return HttpResponseBadRequest('Request Body Empty')
-            # request.body is a bytes object, so decode and load json
-            data = json.loads(request.body.decode("utf-8"))
-            print(data)
+        except ValueError:
+            return HttpResponseBadRequest('Failed to Verify Oauth2 Token')
+        except KeyError:
+            return HttpResponseBadRequest('Cookie Not Found')
+        
+    #Login Verification
+    def post(self, request):
+        if (request.body == None):
+            return HttpResponseBadRequest('Request Body Empty')
+        # request.body is a bytes object, so decode and load json
+        data = json.loads(request.body.decode("utf-8"))
+        if(debug): print(data)
+        # verify oauth2 token
+        try:
+            idinfo = id_token.verify_oauth2_token(data["credential"], Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
 
-            # verify oauth2 token
-            try:
-                idinfo = id_token.verify_oauth2_token(data["credential"], Request(), "822600363302-nmf2tp266kv798jp2g6hrioonb5mrtbh.apps.googleusercontent.com")
-
-                userid = idinfo["sub"]
-                name = idinfo["name"]
+            userid = idinfo["sub"]
+            name = idinfo["name"]
+            if (debug):
                 print(userid)
                 print(name)
 
-                # signed, httpOnly cookie
-                response = HttpResponse()
-                response.set_signed_cookie("id_token", data['credential'], httponly=True)
-                return response
-            except ValueError:
-                return HttpResponseBadRequest("Failed to verify OAuth2 token")
-        
+            # signed, httpOnly cookie
+            response = HttpResponse()
+            response.set_signed_cookie("id_token", data['credential'], secure=True, httponly=True)
+            return response
+        except ValueError:
+            return HttpResponseBadRequest("Failed to verify OAuth2 token")
+    
