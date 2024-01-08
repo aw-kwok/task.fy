@@ -20,6 +20,8 @@
 - ~~Migrate project to Django~~
 - Create API endpoints
 - Migrate database to webhosting software (AWS, Oracle Cloud), research free tiers
+- Connect Google Sign-In to DB
+- Add endpoints for getting user events
 
 ### Frontend
 #### Documentation
@@ -27,11 +29,13 @@
 
 #### To-Do
 - ~~Create Figma landing page~~
-- Create Figma dashboard
+- ~~Create Figma dashboard~~
 - ~~Create landing page from Figma mockup~~
-- Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in) and connect it to DB\
-- Create logo
+- ~~Implement [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in)~~
+- ~~Create logo~~
 - Replace temporary images on landing page
+- Update Sign-In Page
+- Finish Dashboard
 
 ### Ideas:
 - Grade calculator w/ What-If Analysis (might be challenging with permissions in Canvas API, but might still be possible)
