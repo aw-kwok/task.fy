@@ -15,6 +15,8 @@ import DayBefore from "./DayBefore"
 import DayAfter from "./DayAfter"
 import PrevButton from "./PrevButton"
 import NextButton from "./NextButton"
+import SettingsButton from "./SettingsButton"
+import ProfileButton from "./ProfileButton"
 
 export {
     AutoSchedule,
@@ -33,5 +35,7 @@ export {
     DayBefore,
     DayAfter,
     PrevButton,
-    NextButton
+    NextButton,
+    SettingsButton,
+    ProfileButton
 }

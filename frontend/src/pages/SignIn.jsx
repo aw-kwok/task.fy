@@ -14,7 +14,7 @@ const SignIn = () => {
           withCredentials: true
         })
         console.log(res)
-        window.location.href = "/dashboard"
+        // window.location.href = "/dashboard"
       }
       catch (err) {
         console.log(err)

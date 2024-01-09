@@ -44,7 +44,7 @@ class DeleteCookieView(APIView):
 
     def delete(self, request):
         response = HttpResponse()
-        response.delete_cookie('id_token', path=request.path, samesite="None") 
+        response.delete_cookie('id_token', path="/", samesite="None") 
         return response
 
 class GoogleAuthProviderView(APIView):
@@ -65,10 +65,6 @@ class GoogleAuthProviderView(APIView):
             name = idinfo["name"]
             print(userid)
             print(name)
-
-            response = HttpResponse()
-            response.delete_cookie("id_token", path=request.path, samesite="None")
-
             return HttpResponse()
         except KeyError:
             return HttpResponseBadRequest("Cookie not found")
@@ -76,9 +72,6 @@ class GoogleAuthProviderView(APIView):
             return HttpResponseBadRequest("id_token invalid")
 
     def post(self, request):
-        if (request.body == None):
-            return HttpResponseBadRequest('Request Body Empty')
-        
         # request.body is a bytes object, so decode and load json
         data = json.loads(request.body.decode("utf-8"))
         print(data)
@@ -94,7 +87,7 @@ class GoogleAuthProviderView(APIView):
 
             # signed, httpOnly cookie
             response = HttpResponse()
-            response.set_signed_cookie("id_token", data['credential'], httponly=True, samesite = "None", secure = True)
+            response.set_signed_cookie("id_token", data['credential'], httponly=True, samesite = "None", secure = True, path="/")
             return response
         except ValueError as e:
             print(e)

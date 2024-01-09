@@ -4,21 +4,21 @@ import { differenceInCalendarDays, differenceInCalendarMonths } from "date-fns"
 
 
 import { logoWithName } from '../assets'
-import { DayAfter, DayBefore, PrevButton, NextButton } from '../components'
+import { DayAfter, DayBefore, PrevButton, NextButton, SettingsButton, ProfileButton } from '../components'
 
 const Dashboard = () => {
 
   const [value, setValue] = useState(new Date())
   const [activeStartDate, setActiveStartDate] = useState(new Date())
 
-  const getDayEvents = () => {
+  const getDayEvents = (day) => {
     // houses get request
   }
 
   // idk if i do this on page load or on component load
-  // useEffect(() => {
-  //   getDayEvents()
-  // })
+  useEffect(() => {
+    getDayEvents(value)
+  })
 
   const handleActiveStartDateUpdate = (newActiveStartDate) => {
     setActiveStartDate(newActiveStartDate)
@@ -53,7 +53,7 @@ const Dashboard = () => {
   }
 
   const tileClassName = ({date}) => {
-    return `${formatDay({date})} aspect-square tile`
+    return `${formatDay({date})} aspect-square tile rounded-full`
   }
 
   return (
@@ -89,7 +89,7 @@ const Dashboard = () => {
       </div>
       <div className='flex flex-1 flex-col px-8 py-10 text-[36px] font-light'>
         <div className='flex flex-row'>
-          <h1 className=''>Today's Schedule</h1>
+          <h1>Today's Schedule</h1>
           <div className='flex flex-row pl-4 w-[105px] justify-between'>
             <DayBefore date = { value } onUpdate = { handleValueUpdate } />
             <DayAfter date = { value } onUpdate = { handleValueUpdate } />
@@ -98,8 +98,11 @@ const Dashboard = () => {
         </div>
         <h1 className='text-[#4C6BDA]'>{value.toLocaleDateString("default", { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</h1>
       </div>
-      <div className='md:flex flex-1 hidden'>
-
+      <div className='flex flex-col flex-1 px-8 py-10'>
+        <div className='flex flex-row'>
+          <SettingsButton />
+          <ProfileButton />
+        </div>
       </div>
     </div>
   )
