@@ -32,6 +32,8 @@ import dashboard_tilt_temp from "./dashboard_tilt_temp.png"
 import pageNotFound from "./page-not-found.png"
 import gcalTemp from "./gcal_temp.png"
 import logoWithName from "./logo-with-name.svg"
+import leftArrow from "./left-arrow.svg"
+import rightArrow from "./right-arrow.svg"
 
 export {
   airbnb,
@@ -67,5 +69,7 @@ export {
   dashboard_tilt_temp,
   pageNotFound,
   gcalTemp,
-  logoWithName
+  logoWithName,
+  leftArrow,
+  rightArrow
 };

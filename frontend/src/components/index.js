@@ -11,6 +11,10 @@ import GoHome from "./GoHome"
 import ContactButton from "./ContactButton"
 import ProtectedRoute from "./ProtectedRoute"
 import SignInBox from "./SignInBox"
+import DayBefore from "./DayBefore"
+import DayAfter from "./DayAfter"
+import PrevButton from "./PrevButton"
+import NextButton from "./NextButton"
 
 export {
     AutoSchedule,
@@ -25,5 +29,9 @@ export {
     GoHome,
     ContactButton,
     ProtectedRoute,
-    SignInBox
+    SignInBox,
+    DayBefore,
+    DayAfter,
+    PrevButton,
+    NextButton
 }

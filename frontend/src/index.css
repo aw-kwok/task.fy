@@ -14,9 +14,54 @@
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
-abbr {
+/* days of the week*/
+
+.tile {
+  cursor: default;
+}
+
+.tile abbr {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  border-radius: 9999px;
+  color: #000;
+}
+
+.tile abbr:hover {
+  cursor: pointer;
+}
+
+.tile:not(.tile-today):not(.tile-selected) abbr:hover {
+  background-color: #F3ECEC;
+}
+
+.tile-selected abbr:hover {
+  background-color: #7491d7;
+}
+
+.tile-today abbr {
+  background-color: #4C6BDA;
+  color: #FFF;
+}
+
+.tile-selected abbr {
+  background-color: #9CBBFF;
+  color: #FFF;
+}
+
+.tile-different-month abbr {
+  /* text-gray-500 */
+  color: rgb(107 114 128);
+}
+
+
+
+abbr[title] {
   text-decoration: none;
-  /* cursor: default; days use abbr too*/
+  cursor: default;
 }
 
 * {
