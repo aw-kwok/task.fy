@@ -36,6 +36,9 @@ import leftArrow from "./left-arrow.svg"
 import rightArrow from "./right-arrow.svg"
 import settings from "./settings.svg"
 import tempPfp from "./temp_pfp.png"
+import gcalLogo from "./gcal-logo.svg"
+import canvasLogo from "./canvas-logo.svg"
+import syncIcon from "./sync-icon.svg"
 
 export {
   airbnb,
@@ -75,5 +78,8 @@ export {
   leftArrow,
   rightArrow,
   settings,
-  tempPfp
+  tempPfp,
+  gcalLogo,
+  canvasLogo,
+  syncIcon
 };

@@ -17,6 +17,10 @@ import PrevButton from "./PrevButton"
 import NextButton from "./NextButton"
 import SettingsButton from "./SettingsButton"
 import ProfileButton from "./ProfileButton"
+import DashboardWidget from "./DashboardWidget"
+import SyncEventsButton from "./SyncEventsButton"
+import SelectedSubjects from "./SelectedSubjects"
+import Checkbox from "./Checkbox"
 
 export {
     AutoSchedule,
@@ -37,5 +41,9 @@ export {
     PrevButton,
     NextButton,
     SettingsButton,
-    ProfileButton
+    ProfileButton,
+    DashboardWidget,
+    SyncEventsButton,
+    SelectedSubjects,
+    Checkbox
 }

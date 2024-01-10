@@ -4,7 +4,7 @@ import { differenceInCalendarDays, differenceInCalendarMonths } from "date-fns"
 
 
 import { logoWithName } from '../assets'
-import { DayAfter, DayBefore, PrevButton, NextButton, SettingsButton, ProfileButton } from '../components'
+import { DayAfter, DayBefore, PrevButton, NextButton, SettingsButton, ProfileButton, DashboardWidget, SelectedSubjects } from '../components'
 
 const Dashboard = () => {
 
@@ -99,10 +99,12 @@ const Dashboard = () => {
         <h1 className='text-[#4C6BDA]'>{value.toLocaleDateString("default", { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</h1>
       </div>
       <div className='flex flex-col flex-1 px-8 py-10'>
-        <div className='flex flex-row'>
+        <div className='flex flex-row justify-end px-6'>
           <SettingsButton />
           <ProfileButton />
         </div>
+        <DashboardWidget />
+        <SelectedSubjects />
       </div>
     </div>
   )

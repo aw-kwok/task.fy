@@ -3,8 +3,6 @@ import styles from "./style"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { ProtectedRoute } from "./components"
 import { Landing, NoPage, Dashboard, DeleteCookies, SignIn } from "./pages"
-import { useGoogleLogin } from "@react-oauth/google"
-import Cookies from "js-cookie"
 
 import { } from "./assets"
 
