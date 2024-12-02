@@ -1,7 +1,6 @@
-<img align="left" alt="task.fy logo" src = "./logo-white.svg" height="100" />
-
-
-<br /><br /><br /><br />
+<img alt="task.fy logo" src = "./taskfy_showcase.png" />
+<br /><br />
+<img alt="task.fy logo" src = "./logo-white.svg" height="100" />
 
 ---
 

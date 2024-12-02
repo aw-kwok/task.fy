@@ -1,6 +1,6 @@
 import styles from "../style"
 import GetStarted from "./GetStarted"
-import { placeholder, dashboard_tilt_temp } from "../assets"
+import { placeholder, dashboard_tilt } from "../assets"
 
 const Hero = () => (
     <section id = "home" className = {`flex md:flex-row flex-col items-start`}>
@@ -24,7 +24,7 @@ const Hero = () => (
         </div>
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative animate-fadeUp`}>
 
-            <img src={dashboard_tilt_temp} alt="dashboard" className="relative" />
+            <img src={dashboard_tilt} alt="dashboard" className="relative" />
             
         </div>
     </section>

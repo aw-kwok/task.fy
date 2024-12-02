@@ -29,6 +29,7 @@ import hero_blobs from "./hero_blobs.svg"
 import arrow from "./arrow.svg"
 import hero_bottom from "./hero_bottom.svg"
 import dashboard_tilt_temp from "./dashboard_tilt_temp.png"
+import dashboard_tilt from "./dashboard_tilt.png"
 import pageNotFound from "./page-not-found.png"
 import gcalTemp from "./gcal_temp.png"
 import logoWithName from "./logo-with-name.svg"
@@ -72,6 +73,7 @@ export {
   arrow,
   hero_bottom,
   dashboard_tilt_temp,
+  dashboard_tilt,
   pageNotFound,
   gcalTemp,
   logoWithName,
