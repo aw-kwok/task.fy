@@ -9,4 +9,21 @@
 ![Django Badge](https://img.shields.io/badge/Django-4.2.9-green?style=flat&logo=django&color=%23092E20)
 
 ## ✨ Features
-- Uses Canvas API to fetch course calendar data from the user
+
+**task.fy** is an interactive scheduling app designed to combat procrastination through automatic time-blocking. It integrates academic data from Canvas and scheduling infrastructure from Google Calendar to streamline planning and reduce mental overhead.
+
+---
+
+### 🔄 Canvas Integration
+- Connects to the **Canvas API** to fetch course calendars, assignment due dates, and events
+- Supports multi-semester views and course filtering
+
+### 📅 Google Calendar Sync
+- Bi-directional integration with **Google Calendar**
+- Imports existing events to avoid scheduling conflicts
+- Exports time-blocked tasks and reminders in real-time
+
+### 🧠 Minimal Setup, Max Focus
+- Zero configuration after connecting accounts
+- Clean drag-and-drop UI for manual adjustments
+- Weekly and daily views optimized for students
